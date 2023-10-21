@@ -25,15 +25,18 @@ def scrape(question: str)-> list:
     contents = []
 
     for e_url in urls:
-        # Send an HTTP GET request to the URL
-        response = requests.get(e_url)
+        try:
+            # Send an HTTP GET request to the URL
+            response = requests.get(e_url)
 
-        # Check if the request was successful
-        if response.status_code == 200:
-            # Parse the page content using BeautifulSoup
-            soup = BeautifulSoup(response.text, 'html.parser')
+            # Check if the request was successful
+            if response.status_code == 200:
+                # Parse the page content using BeautifulSoup
+                soup = BeautifulSoup(response.text, 'html.parser')
 
-            text_content = soup.get_text()
-            contents.append(text_content)
+                text_content = soup.get_text()
+                contents.append(text_content)
+        except:
+            pass
 
     return contents
