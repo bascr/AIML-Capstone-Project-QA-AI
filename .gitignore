@@ -1,0 +1,14 @@
+Experiments
+
+datasets
+datasets/*
+
+T5_Model/t5/dataset
+T5_Model/t5/tokenizer
+T5_Model/t5/model
+T5_Model/.ipynb_checkpoints
+
+*.tar.gz
+
+
+
