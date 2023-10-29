@@ -1,0 +1,24 @@
+{
+    "encoder": {
+      "max_length": 512
+    },
+    "generator": {
+        "max_length": 128,
+        "num_beams": 8,
+        "num_return_sequences": 2
+    },
+    "key_extractor": {
+      "max_ngram_size":5,
+      "deduplication_threshold": 0.9,
+      "deduplication_algo": "seqm",
+      "numOfKeywords": 1
+    },
+    "t5_custom_model": {
+      "model_file_path": "ai_models/t5/custom/model",
+      "tokenizer_file_path": "ai_models/t5/custom/tokenizer"
+    },
+    "t5_pretrained_model": {
+        "model_file_path": "ai_models/t5/pretrained/model",
+        "tokenizer_file_path": "ai_models/t5/pretrained/tokenizer"
+    }
+}
