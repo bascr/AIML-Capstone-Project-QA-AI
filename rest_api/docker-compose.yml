@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  question-pro:
+    image: 'question-pro:test'
+    environment:
+      - WORKDIR=/home/question-pro
+    build:
+      dockerfile: Dockerfile
+      context: ./
+    ports:
+      - '8000:8000'
