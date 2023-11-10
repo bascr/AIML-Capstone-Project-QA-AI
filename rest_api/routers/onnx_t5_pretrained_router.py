@@ -1,5 +1,5 @@
 from fastapi import APIRouter
-from ai_models.t5_question_generator import T5QuestionGenerator
+from ai_models.onnx_question_generator import ONNXT5QuestionGenerator
 from ai_models.key_concept_extractor import KeyConceptExtractor
 from utilities.config_reader import ConfigReader
 from routers.models.content_schema import ContentSchema
@@ -9,12 +9,11 @@ from typing import List
 
 config = ConfigReader().get_config()
 key_concept_extractor = KeyConceptExtractor(config=config)
-pretrained_model = T5QuestionGenerator(model_file_path=config["t5_pretrained_model"]["model_file_path"],
-                                       tokenizer_file_path=config["t5_pretrained_model"]["tokenizer_file_path"],
-                                       config=config)
+pretrained_model = ONNXT5QuestionGenerator(model_path=config["onnx_t5_pretrained_model"]["model_file_path"],
+                                           config=config)
 
 router = APIRouter(
-    prefix="/t5/pretrained",
+    prefix="/t5/onnx/pretrained",
     tags=["pretrained"],
     responses={
         404: {"description": "Resource not found."}

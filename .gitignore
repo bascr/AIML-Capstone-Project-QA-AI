@@ -8,10 +8,12 @@ T5_Model/t5/tokenizer
 T5_Model/t5/model
 T5_Model/.ipynb_checkpoints
 
-rest_api/venv
+rest_api/.idea/rest_api/venv
 rest_api/ai_models/t5/custom
 rest_api/ai_models/t5/pretrained
+rest_api/ai_models/t5/onnx
 
+.idea
 
 *.tar.gz
 
