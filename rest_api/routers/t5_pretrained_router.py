@@ -22,7 +22,7 @@ router = APIRouter(
 )
 
 
-@router.get("/generate_questions")
+@router.post("/generate_questions")
 async def generate_questions(content: ContentSchema) -> List[GeneratedQuestionsSchema]:
     sentences_lst = key_concept_extractor.get_key_words(content.context)
     response: List[GeneratedQuestionsSchema] = []
